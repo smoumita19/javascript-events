@@ -1,0 +1,73 @@
+:root {
+    --main-primary-color: #33804a;
+    --main-secondary-color: #71a143;
+    --main-tertiary-color: #a7cc99;
+    --main-quaternary-color: #DDE7C7;
+    --main-senary-color: #d0d454;
+    --main-text-color: #27271f ;
+    --main-text-shadow: rgba(0, 0, 0, 0.02);
+    --main-button-color: rgba(0, 0, 0, 0.589);
+} 
+
+
+/* Body Heading, Menu items */
+h1, .text-truncate , .sidebar-heading, .list-group-item {
+    color: var(--main-secondary-color);
+    text-shadow: 0px 2px 5px var(--main-text-shadow);
+
+}
+
+/* Sidebar Heading */
+.sidebar-heading {
+    color: var(--main-senary-color);
+}
+
+/* Example */
+h3 {
+    color: var(--main-tertiary-color);
+}
+
+/* Button, Hambuerger menu */
+button, .navbar-toggler {
+    outline: none;
+
+    border: none;
+    color: var(--main-button-color) !important ;
+    background-color: var(--main-quaternary-color) !important;
+    box-shadow: 0px 0px 0px 2px inset var(--main-text-shadow);
+}
+
+select:focus {
+    outline: 0;
+}
+
+
+/* Links */
+a {
+    color: var(--main-primary-color);
+}
+
+/* button: */
+
+
+/* Button, Paragraphs, Link */
+button:hover, p, a:hover {
+    color: var(--main-text-color) !important;
+    text-shadow: none;
+}
+
+
+
+
+
+/* Keywords and codes */
+code {
+    color: var(--main-senary-color);
+    text-shadow: 0px 2px 5px var(--main-text-shadow);
+}
+
+.active {
+    color: var(--main-primary-color) !important;
+    background-color: var(--main-quaternary-color) !important;
+    border: none;
+}

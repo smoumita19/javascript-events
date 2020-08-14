@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" cbontent="">
+
+  <title>JavaScript | Events</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!--Logo-->
+  <link rel="icon" href="images/javascript.png" type="image/gif" sizes="16x16">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">JavaScript Events</div>
+      <div class="list-group list-group-flush">
+        <a href="index.html" class="list-group-item list-group-item-action active">Home</a>
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu0" data-toggle="collapse" data-target="#submenu0">Resource Events</a>
+            <div class="collapse" id="submenu0" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a href="resource-events.html">Error</a> </li>
+                    <li class="nav-item py-1 px-4"><a href="resource-events.html">Abort</a></li>
+                    <li class="nav-item py-1 px-4"><a href="resource-events.html">Load</a></li>
+                    <li class="nav-item py-1 px-4"><a href="resource-events.html">Beforeunload</a></li>
+                    <li class="nav-item py-1 px-4"><a href="resource-events.html">Unload</a></li>
+                </ul>
+            </div>
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu1" data-toggle="collapse" data-target="#submenu1">Network</a>
+            <div class="collapse" id="submenu1" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="network-events.html">Online</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="network-events.html">Offline</a></li>
+              </ul>
+            </div>
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu2" data-toggle="collapse" data-target="#submenu2">Focus</a>
+            <div class="collapse" id="submenu2" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="focus-events.html">Focus/Blur</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="focus-events.html">Focusin/Focusout</a></li>
+              </ul>
+            </div>
+
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu3" data-toggle="collapse" data-target="#submenu3">WebSocket Events</a>
+            <div class="collapse" id="submenu3" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Open</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Message</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Error</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Close</a></li>
+              </ul>
+            </div>
+
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu4" data-toggle="collapse" data-target="#submenu4">CSS Animation Events</a>
+            <div class="collapse" id="submenu4" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Start</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Cancel</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation End</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Iteration</a></li>
+              </ul>
+            </div>
+            
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu5" data-toggle="collapse" data-target="#submenu5">CSS Transition Events</a>
+            <div class="collapse" id="submenu5" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Start</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Cancel</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition End</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Iteration</a></li>
+              </ul>
+            </div>
+      
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu6" data-toggle="collapse" data-target="#submenu6">Form Events</a>
+            <div class="collapse" id="submenu6" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="form-events.html">Reset</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="form-events.html">Submit</a></li>
+              </ul>
+            </div>
+
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu7" data-toggle="collapse" data-target="#submenu7">Composition Events</a>
+            <div class="collapse" id="submenu7" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition Start</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition Update</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition End</a></li>
+              </ul>
+            </div>
+            
+        <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu8" data-toggle="collapse" data-target="#submenu8">View Events</a>
+            <div class="collapse" id="submenu8" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="view-events.html">Full screen change</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="view-events.html">Full screen error</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="view-events.html">Resize</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="view-events.html">Scroll</a></li>
+              </ul>
+            </div>
+                  
+        <a class="collapsed text-truncate list-group-item list-group-item-action" href="#submenu9" data-toggle="collapse" data-target="#submenu9">Keyboard Events</a>
+            <div class="collapse" id="submenu9" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="keyboard-events.html">Keydown</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="keyboard-events.html">Keyup</a></li>
+              </ul>
+            </div>
+
+        <a class="collapsed text-truncate list-group-item list-group-item-action" href="#submenu10" data-toggle="collapse" data-target="#submenu10">Mouse Events</a>
+            <div class="collapse" id="submenu10" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Auxclick</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Click</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Context Menu</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Double Click</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Down</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Move</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Up</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Enter</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Leave</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Over</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse out</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Select</a></li>
+                  <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Wheel</a></li>
+              </ul>
+            </div>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn" id="menu-toggle">List of Events</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="responsive-img text-center mt-4">
+          <img src="images/undraw_code_inspection_bdl7.svg" width="100%" style="max-width: 400px; margin: auto;" alt="" srcset="">
+        </div>
+        
+        <h1 class="mt-4">Event Reference</h1>
+        <p>DOM Events are sent to notify code of interesting things that have taken place. Each event is represented by an object which is based on the <code>Event</code> interface, and may have additional custom fields and/or functions used to get additional information about what happened. Events can represent everything from basic user interactions to automated notifications of things happening in the rendering model.</p> 
+
+        <p>This website offers a list of events that can be sent; some are standard events defined in official specifications, while others are events used internally by specific browsers; for example.</p>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

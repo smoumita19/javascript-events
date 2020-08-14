@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>JavaScript | Event Listeners</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!--Logo-->
+  <link rel="icon" href="images/javascript.png" type="image/gif" sizes="16x16">
+
+  <style>
+    aside {
+      background: #dbeb4e;;
+      border-radius: 1em;
+      display: inline-block;
+      padding: 1em;
+      transform: scale(.9);
+      transform-origin: 0 0;
+      transition: transform .6s;
+    }
+
+    .large {
+      transform: scale(1.3);
+    }
+
+    canvas {
+    border: 1px solid black;
+    width: 560px;
+    height: 360px;
+    }
+
+    #mouseTarget {
+      box-sizing: border-box;
+      width:15rem;
+      padding: 1rem;
+      border:1px solid #333;
+    }
+
+
+    .div2 {
+      width: 105px;
+      height: 105px;
+      margin: auto;
+      margin-bottom: 2rem;
+      background: #71a143;
+      padding: 5px;
+    } 
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">JavaScript Events</div>
+        <div class="list-group list-group-flush">
+          <a href="index.html" class="list-group-item list-group-item-action ">Home</a>
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu0" data-toggle="collapse" data-target="#submenu0">Resource Events</a>
+              <div class="collapse" id="submenu0" aria-expanded="false">
+                  <ul class="flex-column pl-2 nav">
+                      <li class="nav-item py-1 px-4"><a href="resource-events.html">Error</a> </li>
+                      <li class="nav-item py-1 px-4"><a href="resource-events.html">Abort</a></li>
+                      <li class="nav-item py-1 px-4"><a href="resource-events.html">Load</a></li>
+                      <li class="nav-item py-1 px-4"><a href="resource-events.html">Beforeunload</a></li>
+                      <li class="nav-item py-1 px-4"><a href="resource-events.html">Unload</a></li>
+                  </ul>
+              </div>
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu1" data-toggle="collapse" data-target="#submenu1">Network</a>
+              <div class="collapse" id="submenu1" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="network-events.html">Online</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="network-events.html">Offline</a></li>
+                </ul>
+              </div>
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu2" data-toggle="collapse" data-target="#submenu2">Focus</a>
+              <div class="collapse" id="submenu2" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="focus-events.html">Focus/Blur</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="focus-events.html">Focusin/Focusout</a></li>
+                </ul>
+              </div>
+
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu3" data-toggle="collapse" data-target="#submenu3">WebSocket Events</a>
+              <div class="collapse" id="submenu3" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Open</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Message</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Error</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="websocket-events.html">Close</a></li>
+                </ul>
+              </div>
+
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu4" data-toggle="collapse" data-target="#submenu4">CSS Animation Events</a>
+              <div class="collapse" id="submenu4" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Start</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Cancel</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation End</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-animation-events.html">Animation Iteration</a></li>
+                </ul>
+              </div>
+              
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu5" data-toggle="collapse" data-target="#submenu5">CSS Transition Events</a>
+              <div class="collapse" id="submenu5" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Start</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Cancel</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition End</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="css-transition-events.html">Transition Iteration</a></li>
+                </ul>
+              </div>
+        
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu6" data-toggle="collapse" data-target="#submenu6">Form Events</a>
+              <div class="collapse" id="submenu6" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="form-events.html">Reset</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="form-events.html">Submit</a></li>
+                </ul>
+              </div>
+
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu7" data-toggle="collapse" data-target="#submenu7">Composition Events</a>
+              <div class="collapse" id="submenu7" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition Start</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition Update</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="composition-events.html">Composition End</a></li>
+                </ul>
+              </div>
+              
+          <a class="collapsed text-truncate list-group-item list-group-item-action " href="#submenu8" data-toggle="collapse" data-target="#submenu8">View Events</a>
+              <div class="collapse" id="submenu8" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="view-events.html">Full screen change</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="view-events.html">Full screen error</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="view-events.html">Resize</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="view-events.html">Scroll</a></li>
+                </ul>
+              </div>
+                    
+          <a class="collapsed text-truncate list-group-item list-group-item-action bg-light" href="#submenu9" data-toggle="collapse" data-target="#submenu9">Keyboard Events</a>
+              <div class="collapse" id="submenu9" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="keyboard-events.html">Keydown</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="keyboard-events.html">Keyup</a></li>
+                </ul>
+              </div>
+
+          <a class="collapsed text-truncate list-group-item list-group-item-action active" href="#submenu10" data-toggle="collapse" data-target="#submenu10">Mouse Events</a>
+              <div class="collapse show" id="submenu10" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Auxclick</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Click</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Context Menu</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Double Click</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Down</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Move</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Up</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Enter</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Leave</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse Over</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Mouse out</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Select</a></li>
+                    <li class="nav-item py-1 px-4"><a  href="mouse-events.html">Wheel</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn" id="menu-toggle">List of Events</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+
+        <!--Auxclickchange Event-->
+        <h1 class="mt-4">Element: auxclick event</h1>
+        <p>The <code>auxclick</code> event is fired at an Element when a non-primary pointing device button (any mouse button other than the primary—usually leftmost—button) has been pressed and released both within the same element.</p>
+        <p> <code>auxclick</code> is fired after the mousedown and mouseup events have been fired, in that order.</p>
+
+        <h3 class="mt-4">Example</h3>
+        
+        <button><h1>Click me!(Fix me)</h1></button>
+
+        <!--Click change Event-->
+        <h1 class="mt-4">Element: click event</h1>
+        <p>An element receives a <code>click</code>  event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located inside the element.</p>
+
+        <h3 class="mt-4">Example</h3>
+
+        <button id="button">Click</button>
+
+        <!--Double Click change Event-->
+        <h1 class="mt-4">Element: dblclick event</h1>
+        <p>The <code>dblclick</code> event fires when a pointing device button (such as a mouse's primary button) is double-clicked; that is, when it's rapidly clicked twice on a single element within a very short span of time.</p>
+
+        <h3 class="mt-4">Example</h3>
+
+        <aside>
+          <h4>My Card</h4>
+          <p>Double click to resize this object.</p>
+        </aside>
+
+        <!--Double Click change Event-->
+        <h1 class="mt-4">Element: mousedown/mousemove/mouseup event</h1>
+        <p>The <code>mousedown</code>  event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.</p>
+        <p>The <code>mousemove</code>  event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.</p>
+        <p>The <code>mouseup</code>  event is fired at an Element when a button on a pointing device (such as a mouse or trackpad) is released while the pointer is located inside it. mouseup events are the counterpoint to mousedown events.</p>
+        
+        <h3 class="mt-4">Example</h3>
+        <h1>Drawing with mouse events</h1>
+        <canvas id="myPics" width="560" height="360"></canvas>
+
+
+        <h1 class="mt-4">Element: mouseenter/mouseleave event</h1>
+        <p>The <code>mouseenter</code> event is fired at an Element when a pointing device (usually a mouse) is initially moved so that its hotspot is within the element at which the event was fired.</p>
+        <p></p>
+
+        <h3 class="mt-4">Example</h3>
+
+        <div id="mouseTarget">
+          <div id="unorderedList">
+            <li>No events yet</li>
+          </div>
+        </div>
+
+        <h1 class="mt-4">Element: mouseover event</h1>
+
+        <p>The <code>mouseover</code> event is fired at an Element when a pointing device (usually a mouse) is initially moved so that its hotspot is within the element at which the event was fired.</p>
+
+        <h3 class="mt-4">Example</h3>
+
+        <ul id="test">
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+
+        <h1 class="mt-4">Element: mouseout event</h1>
+        <p>The <code>mouseout</code> event is fired at an Element when a pointing device (usually a mouse) is used to move the cursor so that it is no longer contained within the element or one of its children. mouseout is also delivered to an element if the cursor enters a child element, because the child element obscures the visible area of the element.</p>
+        
+        <h3 class="mt-4">Example</h3>
+
+        <ul id="test2">
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+
+        <h1 class="mt-4">Element: select event</h1>
+        <p>The <code>select</code> event fires when some text has been selected.</p>
+
+        <h3 class="mt-4">Example</h3>
+
+        <input value="Try selecting some text in this element.">
+        <p id="log"></p>
+
+        <h1 class="mt-4">Element: select event</h1>
+        <p>The <code>wheel</code> event fires when the user rotates a wheel button on a pointing device (typically a mouse).</p>
+
+        <div class="div2">Scale me with your mouse wheel.</div>
+
+
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/mouse.js"></script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+      
+    });
+
+  </script>
+
+</body>
+
+</html>
